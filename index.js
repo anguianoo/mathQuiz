@@ -148,7 +148,7 @@ const great = [
 
 ];
 const good = [
-    'you did okay'
+    'That was Okay, but you can do better'
 ];
 const bad = [
     'you did bad'
