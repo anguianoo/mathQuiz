@@ -71,19 +71,19 @@ $('.questionNumber').text(questionNumber);
 //creates html for the question and answers
 function createQuestion(questionIndex) {
 let quizBox = $(`        
-<section class="quizBox">
+<form action="" class="quizBox">
 <section class="questionBox">
     <span alt=${STORE[questionIndex].question} class="question">${STORE[questionIndex].question}</span>
     <section class="button-section">
     </section>
 </section>
-</section>`);
+</form>`);
 
 let questionSelector = $(quizBox).find('.button-section');
 STORE[questionIndex].answers.forEach(function (answerVal, answerId) {
     
     $(`
-    <button type="button" name="button" id="${answerId}" alt=${answerVal} val=${answerVal} class="button2 answers">${answerVal}</button>
+    <input type="button"  name="button" id="${answerId}" alt=${answerVal} value=${answerVal} class="button2 answers"></button>
 `).appendTo(questionSelector);
 });
 return quizBox;
