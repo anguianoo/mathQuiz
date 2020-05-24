@@ -71,7 +71,7 @@ $('.questionNumber').text(questionNumber);
 //creates html for the question and answers
 function createQuestion(questionIndex) {
 let quizBox = $(`        
-<form action="" class="quizBox">
+<form class="quizBox">
 <section class="questionBox">
     <span alt=${STORE[questionIndex].question} class="question">${STORE[questionIndex].question}</span>
     <section class="button-section">
