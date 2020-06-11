@@ -72,11 +72,11 @@ text-align: center;
       font-family: myFirstFont;
       padding: 5px;
     }
-    .question-score{
+    .quiz ul{
       text-align: center;
 padding-right: 20px;
     }
-  .question-score ul li {
+  .quiz ul li {
     
     list-style: none;
     display: inline-block;

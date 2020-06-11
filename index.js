@@ -71,19 +71,22 @@ $('.questionNumber').text(questionNumber);
 //creates html for the question and answers
 function createQuestion(questionIndex) {
 let quizBox = $(`        
-<form>
-<section class="questionBox quizBox">
-    <span alt=${STORE[questionIndex].question} class="question">${STORE[questionIndex].question}</span>
-    <section class="button-section">
-    </section>
-</section>
-</form>`);
+
+        <form class="questionBox quizBox">
+            <h2 class="question">${STORE[questionIndex].question}</h2>
+            <span class="button-section">
+            </span>
+        </form>
+    
+
+
+`);
 
 let questionSelector = $(quizBox).find('.button-section');
 STORE[questionIndex].answers.forEach(function (answerVal, answerId) {
     
     $(`
-    <input type="button"  name="button" id="${answerId}" alt=${answerVal} value=${answerVal} class="button2 answers"></button>
+    <input type="button"  name="button" id="${answerId}" value=${answerVal} class="button2 answers"></button>
 `).appendTo(questionSelector);
 });
 return quizBox;
@@ -98,7 +101,7 @@ $('.quiz').on('click', '.answers', function(event) {
     $('.responseBox').show();
     let selected = this.id;
     let correct = STORE[questionNumber].correct;
-    console.log(this.id);
+    
     const button = document.querySelector('button');
     if( selected == correct)
     {
@@ -111,11 +114,11 @@ $('.quiz').on('click', '.answers', function(event) {
 }
 
 function correctAnswer(){
-    console.log('running correctAnswer');
+    
 
     $('.responseBox').html(`            
     <section>
-    <h1 class="correct">Correct!</h1>
+    <h2 class="correct">Correct!</h2>
     <button class="button3" type="button">Next</button>
 </section>
     `)
@@ -124,10 +127,10 @@ function correctAnswer(){
 
 
 function wrongAnswer(){
-    console.log('running wrongAnswer')
+    
     $('.responseBox').html(`            
     <section>
-    <h1 class="correct">Incorrect!</h1>
+    <h2 class="correct">Incorrect!</h2>
     <button class="button3 next" type="button">Next</button>
 </section>
     `)
@@ -163,7 +166,7 @@ else{
     array = bad;
 }
     return $('.final').html(`
-    <h1 class="final">${array[0]}</h1>
+    <h2 class="final">${array[0]}</h2>
     <button class="restartButton" type="button">Play Again</button>
 
     `)
