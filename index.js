@@ -71,13 +71,13 @@ $('.questionNumber').text(questionNumber);
 //creates html for the question and answers
 function createQuestion(questionIndex) {
 let quizBox = $(`        
-
-        <form class="questionBox quizBox">
+  <section class="questionBox quizBox">
+        <form>
             <h2 class="question">${STORE[questionIndex].question}</h2>
             <span class="button-section">
             </span>
         </form>
-    
+  </section>
 
 
 `);
