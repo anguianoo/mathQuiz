@@ -33,7 +33,7 @@ function startButton() {
     $('.startButton').on('click', function(event) {
         console.log('starting quiz')
         $('.start-page').hide();
-        $('.questionNumber').text(1);
+       $('.questionNumber').text(1);
         $('.renderQuestion').show();
         $('.renderQuestion').prepend(generateQuestion());
 
@@ -71,8 +71,8 @@ $('.questionNumber').text(questionNumber);
 //creates html for the question and answers
 function createQuestion(questionIndex) {
 let quizBox = $(`        
-  <section class="questionBox quizBox">
-        <form>
+  <section>
+        <form class="questionBox quizBox">
             <h2 class="question">${STORE[questionIndex].question}</h2>
             <span class="button-section">
             </span>
@@ -106,9 +106,11 @@ $('.quiz').on('click', '.answers', function(event) {
     if( selected == correct)
     {
         correctAnswer();
+
     }
    else {
        wrongAnswer();
+
    }
 });
 }
@@ -123,6 +125,7 @@ function correctAnswer(){
 </section>
     `)
     updateScore();
+    
 }
 
 
@@ -134,6 +137,7 @@ function wrongAnswer(){
     <button class="button3 next" type="button">Next</button>
 </section>
     `)
+    
 }
 function nextQuestion() {
     $('.quiz').on('click', '.button3' , function(event) {
@@ -141,6 +145,19 @@ function nextQuestion() {
         $('.renderQuestion').show();
         updateQuestion();
         $('.renderQuestion section').replaceWith(generateQuestion());
+        if (questionNumber === 1){
+            $('.questionNumber').text(2);
+        }
+        else if(questionNumber === 2){
+            $('.questionNumber').text(3);
+        }
+        else if(questionNumber === 3){
+            $('.questionNumber').text(4);
+        }
+        else if(questionNumber === 4){
+            $('.questionNumber').text(5);
+        }
+
     });
 }
 function finalPage(){
